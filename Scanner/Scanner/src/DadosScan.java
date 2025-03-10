@@ -2,25 +2,33 @@ import java.util.Scanner;
 
 public class DadosScan {
     public static void main(String[] args) throws Exception {
-       java.util.Scanner scanner = new java.util.Scanner(System.in);
+       Scanner scanner = new Scanner(System.in);
+        String nome;
+        int idade, tempoIdade;
+        double alturam, alturacm;
+
+        //Solicitando nome do usuário
         System.out.print ("Digite seu Nome: ");
-        String nome = scanner.nextLine();
+        nome = scanner.nextLine();
 
+        //Solicitando a idade do usuário
         System.out.print("Digite sua Idade: ");
-        int idade = scanner.nextInt();
-        int subtracao = 50 - idade;
+        idade = scanner.nextInt();
+        tempoIdade = 50 - idade;
 
+        //Solicitando a altura do usuário
         System.out.print("Digite sua Altura em Metros: ");
-        double alturam = scanner.nextDouble();
-        double alturacm = alturam * 100;
+        alturam = scanner.nextDouble();
+        alturacm = alturam * 100;
 
-        if (idade > 49) {
+        //Mensagem de boas vindas com condicional caso usuário tenha 50 anos ou mais
+        if (idade > 49){
             System.out.println("Olá, " + nome + "!, Você já tem 50 anos ou mais.");
+        } else {
+            System.out.println("Olá, " + nome + "! Em " + tempoIdade + " anos, você terá 50 anos.");
         }
-        else {
 
-            System.out.println("Olá, " + nome + "! Em " + subtracao + " anos, você terá 50 anos.");
-        }
+        //Mensagem mostrando a altura do usuário
         System.out.println("Sua altura é de " + alturacm + " centimetros.");
         scanner.close();
     }
